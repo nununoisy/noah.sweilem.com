@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link href="style.css" rel="stylesheet" />
+  <link href="nsfonly.css" rel="stylesheet" />
+  <script src="./rusticnes_wasm.js"></script>
+  <script src="./input.js"></script>
+  <script src="./main.js"></script>
+  <title>NSF Player</title>
+</head>
+<body>
+  <div id="navbar">
+    <ul id="main_menu">
+      <li id="power_light"><div id="led" class=""></div></li>
+      <li><button name="playfield" class="active">Play</button></li>
+      <li><input type="file" id="file-loader" name="file-loader" /></li>
+      <li><button name="configure_input">Input</button></li>
+    </ul>
+    <div id="profiling-results"></div>
+  </div>
+  <div id="content_area">
+    <div class="tab_content" id="playfield">
+      <div class="canvas_container">
+        <canvas id="pixels" width="256" height="240"></canvas>
+      </div>
+    </div>
+    <div class="tab_content active" id="jam">
+      <div class="apu_container">
+        <div class="active" id="audio-context-warning">
+          <div class="play-button">
+            <div class="play-button-icon"></div>
+          </div>
+        </div>
+        <div class="flex_rows">
+          <div class="flex_columns">
+            <div class="nsf-info-container">
+              <img id="nsf-album-art" src="" alt="Loading..." />
+              <div class="nsf-info-lines">
+                <div id="nsf-name"></div>
+                <div id="nsf-artist"></div>
+                <div id="nsf-copyright"></div>
+                <div id="nsf-expansion-chips">
+                  <span data-chip="2A03">2A03</span>
+                </div>
+              </div>
+              <div id="fps-counter">FPS: 0</div>
+            </div>
+          </div>
+          <div class="flex_columns">
+            <div class="jam_pixels_container">
+              <canvas id="jam_pixels" width="256" height="240"></canvas>
+            </div>
+          </div>
+          <div class="flex_columns">
+            <div class="piano_roll_container">
+              <canvas id="piano_roll_window" width="480" height="270"></canvas>
+            </div>
+          </div>
+          <div class="flex_columns">
+            <ul class="credits">
+              <li>Arranged with <a target="_blank" href="https://github.com/Dn-Programming-Core-Management/Dn-FamiTracker">Dn-FamiTracker</a></li>
+              <li>Player based on <a target="_blank" href="https://github.com/zeta0134/rusticnes-wasm/">RusticNES</a></li>
+              <li>Game artwork from <a target="_blank" href="https://www.igdb.com/">IGDB</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab_content" id="configure_input">
+      <div class="flex_columns">
+        <div>
+          <h1>P1 - Standard</h1>
+          <table>
+            <tr><td>A     </td><td><button id="p1_a"      data-controller="standard" data-slot="1" data-key="0"></button></td></tr>
+            <tr><td>B     </td><td><button id="p1_b"      data-controller="standard" data-slot="1" data-key="1"></button></td></tr>
+            <tr><td>Select</td><td><button id="p1_select" data-controller="standard" data-slot="1" data-key="2"></button></td></tr>
+            <tr><td>Start </td><td><button id="p1_start"  data-controller="standard" data-slot="1" data-key="3"></button></td></tr>
+            <tr><td>Up    </td><td><button id="p1_up"     data-controller="standard" data-slot="1" data-key="4"></button></td></tr>
+            <tr><td>Down  </td><td><button id="p1_down"   data-controller="standard" data-slot="1" data-key="5"></button></td></tr>
+            <tr><td>Left  </td><td><button id="p1_left"   data-controller="standard" data-slot="1" data-key="6"></button></td></tr>
+            <tr><td>Right </td><td><button id="p1_right"  data-controller="standard" data-slot="1" data-key="7"></button></td></tr>
+          </table>
+        </div>
+        <div>
+          <h1>P2 - Standard</h1>
+          <table>
+            <tr><td>A     </td><td><button id="p2_a"      data-controller="standard" data-slot="2" data-key="0"></button></td></tr>
+            <tr><td>B     </td><td><button id="p2_b"      data-controller="standard" data-slot="2" data-key="1"></button></td></tr>
+            <tr><td>Select</td><td><button id="p2_select" data-controller="standard" data-slot="2" data-key="2"></button></td></tr>
+            <tr><td>Start </td><td><button id="p2_start"  data-controller="standard" data-slot="2" data-key="3"></button></td></tr>
+            <tr><td>Up    </td><td><button id="p2_up"     data-controller="standard" data-slot="2" data-key="4"></button></td></tr>
+            <tr><td>Down  </td><td><button id="p2_down"   data-controller="standard" data-slot="2" data-key="5"></button></td></tr>
+            <tr><td>Left  </td><td><button id="p2_left"   data-controller="standard" data-slot="2" data-key="6"></button></td></tr>
+            <tr><td>Right </td><td><button id="p2_right"  data-controller="standard" data-slot="2" data-key="7"></button></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

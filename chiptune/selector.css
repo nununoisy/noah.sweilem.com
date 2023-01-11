@@ -1,0 +1,224 @@
+html, body {
+    inset: 0;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+.inactive {
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.list-container {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.list-header {
+    background: #ff9800;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+    width: 100vw;
+    position: fixed;
+
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 2;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+}
+
+.list-header, .list-header-spacer {
+    height: 56px;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+.list-container ul {
+    flex: 1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+    overflow-y: scroll;
+}
+
+.list-container ul li {
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+
+    min-height: 128px;
+    height: 20vh;
+    max-height: 20vh;
+    width: 100%;
+
+    box-sizing: border-box;
+    padding: 1.5rem;
+
+    transition: background-color 100ms ease-in-out;
+}
+
+.list-container ul li:hover {
+    background-color: rgba(120, 120, 120, 40%);
+}
+
+.list-container ul li img {
+    height: 100%;
+    margin-right: 1.5rem;
+}
+
+.list-container ul li .list-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.list-container ul li .list-item-info div {
+    font-size: 1rem;
+    user-select: none;
+}
+
+.list-container ul li .list-item-info .list-item-title {
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 750px) {
+    .list-container ul li .list-item-info .list-item-title {
+        font-size: 1rem;
+    }
+    .list-container ul li .list-item-info .list-item-copyright {
+        font-size: 0.75rem;
+    }
+}
+
+.list-container ul li .list-item-download {
+    align-self: center;
+    margin-left: auto;
+    margin-right: 1rem;
+    background-color: #ff9800;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: background-color 100ms ease-in-out;
+
+    display: flex;
+}
+
+.list-container ul li .list-item-download:hover {
+    background-color: #ffa730;
+}
+
+.list-container ul li .list-item-download:active {
+    background-color: #ce7c00;
+    text-decoration: none;
+}
+
+.list-container ul li .list-item-download .material-symbols-outlined {
+    max-width: 24px;
+    overflow: hidden;
+}
+
+#player-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(60, 60, 60, 60%);
+
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 200ms ease-in-out;
+}
+
+.player-frame-container {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    max-width: 1000px;
+    max-height: 740px;
+    overflow: hidden;
+
+    border-radius: 0.375rem;
+
+    background-color: #000000;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+@media only screen and (max-width: 750px), (max-height: 750px) {
+    .player-frame-container {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+#player-frame {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    overflow: hidden;
+}
+
+#player-close-button {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+
+    color: #ffffff;
+
+    height: 36px;
+    width: 36px;
+
+    text-align: center;
+    line-height: 36px;
+
+    user-select: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 200ms ease-in-out;
+
+    border-radius: 50%;
+}
+
+#player-close-button:hover {
+    background-color: rgba(255, 255, 255, 40%);
+}
+
+#player-close-button:active {
+    background-color: rgba(255, 255, 255, 60%);
+}

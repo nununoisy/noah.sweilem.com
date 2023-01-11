@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="description" content="Noah Sweilem's personal website" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preload" as="image" href="images/headshot.jpg">
+        <title>Noah Sweilem</title>
+    </head>
+    <body>
+        <div id="top" aria-hidden="true"></div>
+        <div class="fade-in" aria-hidden="true"></div>
+        <div id="appbar" role="banner">
+            <div class="title-bar">
+                <img src="images/pfp-hq.png" class="pfp-image" alt="Profile Image" />
+                <h3 class="title-text">Noah Sweilem</h3>
+                <div class="title-links">
+                    <a href="mailto:nsweilem@vt.edu" target="_blank" aria-label="Email">
+                        <span class="iconify" data-icon="fa-solid:at"></span>
+                    </a>
+                    <a href="https://github.com/nununoisy" target="_blank" aria-label="GitHub">
+                        <span class="iconify" data-icon="mdi:github"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/noah-sweilem-150388162/" target="_blank" aria-label="LinkedIn">
+                        <span class="iconify" data-icon="mdi:linkedin"></span>
+                    </a>
+                </div>
+            </div>
+            <div id="navbar" role="menubar"></div>
+        </div>
+        <div class="initial">
+            <div id="initial-sidebar">
+                <h4>Hi, I'm</h4>
+                <h1>Noah Sweilem</h1>
+                <div class="initial-scroll-down-indicator" role="button" aria-label="Scroll to content"></div>
+            </div>
+            <div id="initial-sidebar-spacer" aria-hidden="true"></div>
+            <div id="initial-header" aria-hidden="true">
+                <h4>Hi, I'm</h4>
+                <h1>Noah Sweilem</h1>
+                <div class="initial-scroll-down-indicator"></div>
+            </div>
+        </div>
+        <div id="content">
+            <div class="section">
+                <h2 class="section-header">About Me</h2>
+                <p>
+                    Hi, I'm Noah Sweilem. I'm a <span id="age">21</span>-year-old Arizona
+                    native turned Virginia Tech student. Along my journey, I've spent countless
+                    hours hacking away at all kinds of computer projects. I enjoy learning new
+                    things, and I work hard to make sure I understand everything I learn.
+                </p>
+            </div>
+            <div class="section">
+                <h2 class="section-header">Portfolio</h2>
+                <ul class="portfolio-list">
+                    <li class="portfolio-list-item">
+                        <img src="images/scasm.png" alt="SCAsm screenshot" />
+                        <h5>SCAsm</h5>
+                        <p>
+                            A React SPA that provides an IDE, emulator, and debugger for assembly
+                            programs targeting the single-cycle Simple Computer RISC ISA presented
+                            in chapter 8 of <i>Logic and Computer Design Fundamentals (5 ed.)</i>
+                            by M. Morris Mano, Charles R. Kime, and Tom Martin.
+                        </p>
+                        <ul class="portfolio-list-item-links">
+                            <li><a href="https://nununoisy.github.io/SCAsm/" target="_blank">SCAsm</a></li>
+                            <li><a href="https://github.com/nununoisy/SCAsm" target="_blank">Source on GitHub</a></li>
+                        </ul>
+                    </li>
+                    <li class="portfolio-list-item">
+                        <img src="images/jsformer.png" alt="JSFormer logo" />
+                        <h5>JSFormer</h5>
+                        <p>
+                            A React SPA that acts as a replacement for the Image Reformer utility for TI's
+                            MSP432 GrLib that provides a graphical interface for downscaling and converting
+                            images to C source files. I designed this utility for my own use, but it is now
+                            the tool used in the Embedded Systems course (ECE 2564) at Virginia Tech.
+                        </p>
+                        <ul class="portfolio-list-item-links">
+                            <li><a href="https://nununoisy.github.io/JSFormer/" target="_blank">JSFormer</a></li>
+                            <li><a href="https://github.com/nununoisy/JSFormer" target="_blank">Source on GitHub</a></li>
+                        </ul>
+                    </li>
+                    <li class="portfolio-list-item">
+                        <img src="images/kojima.jpg" alt="Hideo Kojima" />
+                        <h5>Kojimaize</h5>
+                        <p>
+                            A joke Discord bot designed around a fake Tweet from a Japanese video game
+                            designer that quickly became a study into NLP, phonetics, and inter-lingual
+                            transliteration.
+                        </p>
+                        <ul class="portfolio-list-item-links">
+                            <li><a href="https://kojimaize.xyz" target="_blank">Kojimaize</a></li>
+                            <li><a href="https://github.com/nununoisy/kojimabot" target="_blank">Source on GitHub</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2 class="section-header">Other Projects</h2>
+                <ul class="portfolio-list">
+                    <li class="portfolio-list-item">
+                        <img src="images/rp2a03.jpg" alt="RP2A03G chip from NES, licensed under CC-BY-SA 3.0 from https://happytrees.org/chips/ic/Ricoh/RP2A03G" />
+                        <h5>Chiptunes</h5>
+                        <p>
+                            I enjoy porting my favorite music to be playable on the Famicom/NES. All of my covers are
+                            available here, both through an in-browser emulator and as an NSF download.
+                        </p>
+                        <ul class="portfolio-list-item-links">
+                            <li><a href="chiptune/index.html" target="_blank">Chiptunes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2 class="section-header">Resume</h2>
+                <div id="resume-container" title="Click to download PDF" role="article">
+                    <a href="resume.pdf" target="_blank" aria-label="Resume PDF link">
+                        <canvas id="resume-canvas">
+                            Your browser doesn't support HTML5 canvas. Click here to download a PDF copy.
+                        </canvas>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+        <script src="script.js"></script>
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.0.1/iconify.min.js"></script>
+    </body>
+</html>

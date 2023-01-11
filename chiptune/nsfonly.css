@@ -1,0 +1,177 @@
+/* note: minimal new styling here, mostly this just hides elements on the main interface
+   that we don't want to display in the embedded one. */
+
+#navbar, #playfield, #configure-input, #profiling-results, .jam_pixels_container {
+  display: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+}
+
+#content_area {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#audio-context-warning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: none;
+}
+
+#audio-context-warning.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button {
+  width: 8rem;
+  height: 8rem;
+
+  background-color: #ff9800;
+  border: 3px solid #121212;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button-icon {
+  width: 3rem;
+  height: 3rem;
+
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 1.5rem 0 1.5rem 3rem;
+  border-color: transparent transparent transparent #121212;
+}
+
+.nsf-info-container {
+  display: flex;
+
+  height: 6rem;
+  width: 960px;
+
+  padding-top: 8px;
+}
+
+#nsf-album-art {
+  height: 6rem;
+  width: auto;
+  max-width: 10rem;
+
+  flex: 0 0 auto;
+}
+
+#jam div.nsf-info-lines {
+  margin: 0 8px;
+
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#jam div.nsf-info-lines div {
+  margin: 0;
+}
+
+#nsf-expansion-chips {
+  display: flex;
+}
+
+#nsf-expansion-chips span {
+  margin-right: 0.5rem;
+
+  font-size: 0.75rem;
+  padding: 0 0.125rem;
+  border-radius: 0.125rem;
+}
+
+#nsf-expansion-chips span[data-chip="2A03"] {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+#nsf-expansion-chips span[data-chip="MMC5"] {
+  background-color: #11cb11;
+  color: #121212;
+}
+
+#nsf-expansion-chips span[data-chip="VRC6"] {
+  background-color: #ffff00;
+  color: #121212;
+}
+
+#nsf-expansion-chips span[data-chip="VRC7"] {
+  background-color: #ff9800;
+  color: #121212;
+}
+
+#nsf-expansion-chips span[data-chip="FDS"] {
+  background-color: #1c80ff;
+  color: #121212;
+}
+
+#nsf-expansion-chips span[data-chip="N163"] {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+#nsf-expansion-chips span[data-chip="S5B"] {
+  background-color: #ff00d0;
+  color: #121212;
+}
+
+#fps-counter {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  color: #6f6f6f;
+}
+
+.credits {
+  padding: 0;
+}
+
+.credits li {
+  display: inline-block;
+  position: relative;
+
+  font-size: 0.75rem;
+  margin-right: 0.75rem;
+
+  color: #6f6f6f;
+}
+
+.credits li:before {
+  content: "";
+  display: list-item;
+  position: absolute;
+  list-style-position: inside;
+  left: -0.625rem;
+}
+
+.credits li:first-child:before {
+  display: none;
+}
+
+.credits li a {
+  color: #aaaaaa;
+}
+
+@media only screen and (max-height: 750px) {
+  #jam div.piano_roll_container {
+    height: calc(100vh - 200px);
+  }
+}
