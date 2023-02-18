@@ -600,5 +600,6 @@ function set_art_for_cartridge(url) {
 }
 
 function handle_piano_roll_window_click(e) {
-  rpc("handle_piano_roll_window_click", [e.offsetX / 2, e.offsetY / 2]).then();
+  const w = e.target.getBoundingClientRect().width;
+  rpc("handle_piano_roll_window_click", [480 * e.offsetX / w, e.offsetY / 2]).then();
 }
