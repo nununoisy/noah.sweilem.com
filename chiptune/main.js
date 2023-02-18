@@ -599,7 +599,13 @@ function set_art_for_cartridge(url) {
   }
 }
 
+/**
+ *
+ * @param {MouseEvent} e
+ */
 function handle_piano_roll_window_click(e) {
-  const w = e.target.getBoundingClientRect().width;
-  rpc("handle_piano_roll_window_click", [480 * e.offsetX / w, e.offsetY / 2]).then();
+  const r = e.target.getBoundingClientRect();
+  const x = 480 * (e.clientX - r.left) / r.width;
+  const y = (e.clientY - r.top) / 2;
+  rpc("handle_piano_roll_window_click", [x, y]).then();
 }
