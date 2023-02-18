@@ -78,6 +78,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 200ms ease-in-out;
 }
 
 .title-links a:hover {

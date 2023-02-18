@@ -185,6 +185,7 @@ async function init_audio_context() {
     sampleRate: 44100,
   });
   await g_audio_context.audioWorklet.addModule('audio_processor.js');
+  await g_audio_context.resume(); // Required for support on Safari
   g_nes_audio_node = new AudioWorkletNode(g_audio_context, 'nes-audio-processor');
   g_nes_audio_node.connect(g_audio_context.destination);
   g_nes_audio_node.port.onmessage = handle_audio_message;
