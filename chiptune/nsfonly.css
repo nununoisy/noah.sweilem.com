@@ -175,3 +175,30 @@ body {
     height: calc(100vh - 200px);
   }
 }
+
+@media only screen and (max-height: 400px) {
+  #jam div.piano_roll_container {
+    height: calc(100vh - 150px);
+  }
+
+  .nsf-info-container {
+    height: 4rem;
+  }
+
+  #nsf-album-art {
+    height: 4rem;
+  }
+
+  #jam div.nsf-info-lines {
+    margin: 0 6px;
+    font-size: 0.75rem;
+  }
+
+  #nsf-expansion-chips span {
+    margin-right: 0.25rem;
+
+    font-size: 0.5rem;
+    padding: 0 0.1rem;
+    border-radius: 0.1rem;
+  }
+}

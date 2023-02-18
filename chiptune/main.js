@@ -425,7 +425,7 @@ function requestFrame() {
 }
 
 async function renderLoop() {
-  if (g_rendered_frames.length > 0) {
+  if (g_rendered_frames.length > 0 && g_audio_context && g_audio_context.state === "running") {
     for (let panel of g_rendered_frames.shift()) {
       const typed_pixels = new Uint8ClampedArray(panel.image_buffer);
       const rendered_frame = new ImageData(typed_pixels, panel.width, panel.height);
